@@ -1,0 +1,26 @@
+
+This is documentation for the Helium programs, since it's all mixed up with the hydrogen ones
+
+
+*** ACTUAL PROGRAMS
+
+P_transmit_He --- the transmission probability that a He photon will
+be absorbed over some distance lambda (in physical Mpc)
+
+sigma_He_ionization ---the photoionization cross section
+
+initialize_Helium --- initializes parameters for He case
+
+
+
+**** TEST PROGRAMS
+
+test_lower_redshift_transmitted_flux ---this calculates the
+transmitted flux integrand for hydrogen lyman alpha, showing that most
+transmission comes from low densities 
+
+test_filling_factor_soft---this integrates the equation
+Qdot=Ndot*(1-Q) and displays the plot
+
+test_He_transmission --- test the transmission probability over some
+distance l

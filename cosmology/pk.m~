@@ -1,0 +1,9 @@
+%%%% fit to power spectrum from Eisenstein & Hu 
+
+
+
+
+
+function D1(z)
+cosmological_parameters
+

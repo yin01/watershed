@@ -1,0 +1,11 @@
+
+
+%%% this is a test of the various cross sections
+
+E=logspace(log10(25),log10(500));
+
+y1=sigma_HeI_old(E);
+y2=sigma_HeI(E);
+
+loglog(E,y1,E,y2)
+shg

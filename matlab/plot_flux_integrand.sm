@@ -1,0 +1,61 @@
+go	data delta_integrand.dat
+	read delta 1
+	read alpha 2
+	read beta 3
+	read gam 4
+	read xHIa 5
+	read xHIb 6
+	
+	lweight 2
+	expand 1.5
+	
+	set lgdelta=lg(delta)
+	limits -1.1 1.6 0. 2.3
+	ticksize -1 0 0 0 
+	location 5000 29000 5000 29000
+	box
+	ltype 0
+	lweight 4
+	connect lgdelta alpha
+	lweight 2
+	ctype blue
+	connect lgdelta beta
+	ctype green
+	connect lgdelta gam
+	ctype default
+	ltype 2
+	lweight 4 
+	connect lgdelta xHIa
+	####lweight 2
+	ctype red
+	connect lgdelta xHIb
+	ctype default
+	lweight 2
+	ltype 0
+ 
+	expand 1.8
+	xlabel \Delta
+	ylabel y P(\Delta) \Delta
+	####expand 1.6
+
+	relocate -0.55 1.97
+	putlabel 5 \alpha
+	ctype blue
+	relocate -0.37 1.43
+	putlabel 5 \beta
+	ctype green 
+	relocate -0.23 1.03
+	putlabel 5 \gamma
+	ctype default
+
+	relocate 0.5 0.34
+	putlabel 5 x_{HI}(Vol)
+	ctype red
+	relocate 0.17 0.12
+	putlabel 5 x_{HI}(Mass)
+	
+	expand 1.5
+	ctype default
+	
+		
+	 

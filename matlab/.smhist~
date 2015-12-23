@@ -1,0 +1,85 @@
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+macro read plot_flux_integrand.sm
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+relocate -0.501189 1.01325
+erase
+macro read plot_flux_integrand.sm
+go
+relocate -0.212142 1.00255
+erase
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_scaling_relations.sm
+go
+hardcopy
+quit
+macro read plot_scaling_relations.sm
+go
+hardcopy
+go
+hardcopy
+quit
+macro read plot_lower_redshift_flux.sm
+go
+hardcopy
+quit
+macro read plot_filling_factor_soft.sm
+macro read plot_filling_factor_soft
+quit
+macro read plot_delta_crit.sm
+go
+relocate 5.79 0.392858
+erase
+macro read plot_delta_crit.sm
+go
+relocate 3.52452 0.303491
+erase
+macro read plot_delta_crit.sm
+go
+hardcopy
+quit

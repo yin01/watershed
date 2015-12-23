@@ -1,0 +1,137 @@
+### This plots the scaling relations 
+
+go  expand 1.5
+    lweight 2
+
+
+### 	    density slope
+
+    data density_slope.dat
+    read delta 1
+    read dDelta1 2
+    read dDelta2 3
+    read dDelta3 4
+
+    set lgdelta=lg(delta)
+    #set lgdDelta1=lg(dDelta1)
+    #set lgdDelta2=lg(dDelta2)
+    #set lgdDelta3=lg(dDelta3)
+
+    window 2 2 1 2 
+    limits 0. 3. -3. -1.
+    ticksize -1 0 0 0
+    box
+    xlabel \Delta_{i}
+    ylabel \alpha
+
+    connect lgdelta dDelta1
+    connect lgdelta dDelta2
+    connect lgdelta dDelta3 
+    
+    relocate 1.4 -2.3
+    putlabel 5 z=3
+    relocate 0.84 -1.94
+    putlabel 5 z=6
+    relocate 0.94 -1.4
+    putlabel 5 z=9
+
+### 	     mean free path
+   
+   data mfp_analytic_fits.dat
+   read delta 1
+   read real2 2
+   read analytic2 3
+   
+   set lgdelta=lg(delta)
+   set lgreal2=lg(real2)
+   set lganalytic2=lg(analytic2)
+
+   window 2 2 2 2
+   limits lgdelta lgreal2
+   ticksize -1 0 -1 0
+   box
+   xlabel \Delta_{i}
+   ylabel \lambda_{\rm mfp} (Mpc)
+    
+   connect lgdelta lgreal2
+   ltype 2
+   connect lgdelta lganalytic2 
+   ltype 0 
+
+
+### 	     mean free path
+   
+   data mfp_analytic_fits.dat
+   read delta 1
+   read real2 2
+   read analytic2 3
+   
+   set lgdelta=lg(delta)
+   set lgreal2=lg(real2)
+   set lganalytic2=lg(analytic2)
+
+   window 2 2 2 2
+   limits lgdelta lgreal2
+   ticksize -1 0 -1 0
+   box
+   xlabel \Delta_{i}
+   ylabel \lambda_{\rm mfp} (Mpc)
+    
+   connect lgdelta lgreal2
+   ltype 2
+   connect lgdelta lganalytic2 
+   ltype 0 
+
+### 	     recombination rate
+   
+   data rec_analytic_fits.dat
+   read delta 1
+   read real2 2
+   read analytic2 3
+   
+   set lgdelta=lg(delta)
+   set lgreal2=lg(real2)
+   set lganalytic2=lg(analytic2)
+
+   window 2 2 1 1
+   limits lgdelta lgreal2
+   ticksize -1 0 -1 0
+   box
+   xlabel \Delta_{i}
+   ylabel R
+    
+   connect lgdelta lgreal2
+   ltype 2
+   connect lgdelta lganalytic2 
+   ltype 0 
+
+### 	     gamma
+   
+   data gam_analytic_fits.dat
+   read delta 1
+   read real2 2
+   read analytic2 3
+   
+   set lgdelta=lg(delta)
+   set lgreal2=lg(real2)
+   set lganalytic2=lg(analytic2)
+
+   window 2 2 2 1
+   limits lgdelta lgreal2
+   ticksize -1 0 -1 0
+   box
+   xlabel \Delta_{i}
+   ylabel \Gamma_{-12}
+    
+   connect lgdelta lgreal2
+   ltype 2
+   connect lgdelta lganalytic2 
+   ltype 0 
+
+
+
+
+
+	     
+
+    

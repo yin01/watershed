@@ -1,0 +1,14 @@
+%%% This is sigmaM from the old fortran fitting routine
+%%% this is the most accurate sigma_M
+
+function y=sigmaM_old_fortran(Mass) %% M is given in solar masses
+cosmological_parameters
+
+p=0.0873;
+
+m=Mass*((gamma_CDM*h).^2)./1.e12;
+
+sigmaM=1.+2.208.*(m.^p)-0.7668.*(m.^(2.*p))+0.7949.*(m.^(3.*p));
+sigmaM=sigma_norm.*(sigmaM.^(-2./(9.*p)));
+
+y=abs(sigmaM);

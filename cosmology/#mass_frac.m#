@@ -1,0 +1,15 @@
+%% this tells you the mass fraction for a mass M as a function of z
+%%% 
+
+
+function y=mass_frac(M,z)
+cosmological_parameters
+  
+zf=zf_func(M);
+
+nu=1.211+1.858.*log10(1.+zf)+0.308.*(Omega_lambda.^2)-0.032.*log10(M/ ...
+						  1.e11);
+
+exponent=-0.301.*((log10(1+z)./log10(1+zf)).^nu);
+y=10.^exponent;
+

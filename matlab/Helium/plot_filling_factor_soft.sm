@@ -1,0 +1,29 @@
+go 	data filling_factor_soft.dat
+	read z 1
+	read Q1 2
+	read Q2 3
+	read Q3 4
+	read Q4 5
+	read Q5 6
+
+	limits 2.6 6 0 3
+	lweight 2
+	box
+	expand 1.6
+	xlabel z
+	ylabel Q_{i}(z)
+
+	ltype 0
+	lweight 6
+	connect z Q2
+	lweight 2
+	connect z Q3
+
+	ltype 2
+	connect z Q1
+
+	ltype 5
+	connect z Q4
+	connect z Q5
+
+	ltype 0 

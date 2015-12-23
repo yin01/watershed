@@ -1,0 +1,8 @@
+quit
+macro read plot_flux_integrand.sm
+go
+quit
+putlabel \alpha
+quit
+cd
+quit

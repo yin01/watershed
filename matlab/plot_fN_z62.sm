@@ -1,0 +1,30 @@
+go	data fN_z62.dat
+	read NHI 1
+	read fN 2
+	read fN2 3
+	read fN3 4
+
+	
+	location 5000 28000 5000 28000
+	lweight 2
+	expand 1.5
+	set lgN=lg(NHI)
+	set lgfN=lg(fN)
+	set lgfN2=lg(fN2)
+	set lgfN3=lg(fN3)
+
+	limits lgN lgfN2
+	ticksize -1 0 -1 0
+	box
+	ltype 0
+	connect lgN lgfN
+	ltype 2
+	connect lgN lgfN2
+	ltype 3
+	ctype red
+	connect lgN lgfN3
+	ltype 0
+	ctype default
+	
+	ylabel f(N_{\rm HI})
+	xlabel N_{\rm HI} (cm^{-2})

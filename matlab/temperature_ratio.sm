@@ -1,0 +1,31 @@
+go	data temperature_ratio.dat
+	read z 1
+	read T2_z7 2
+	read T2_z10 3
+	read T3_z7 4
+	read T3_z10 5
+
+	expand 1.5 
+	lweight 2
+	limits 4. 6. 0.7 1.2
+	box
+	
+	##ltype 0
+	##connect z T2_z7
+	##ltype 1
+	###connect z T2_z10
+	ltype 0
+	connect z T3_z7
+	ltype 1
+	connect z T3_z10
+	ltype 0	
+
+	expand 1.8 
+	xlabel z
+	ylabel T_{\alpha}/T_{\beta}
+
+	relocate 5.1 0.85
+	putlabel 5 z_{r}=10
+
+	relocate 5.1 1.05 
+	putlabel 5 z_{r}=7 

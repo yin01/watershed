@@ -1,0 +1,47 @@
+go	data lower_redshift_delta_integrand.dat
+	read delta 1
+	read alpha1 2
+	read alpha2 3
+	read alpha3 4
+	read alpha4 5
+	
+	lweight 2
+	expand 1.5
+	
+	set lgdelta=lg(delta)
+	limits -1.3 1.1 0. 1. 
+	ticksize -1 0 0 0 
+	location 5000 29000 5000 29000
+	box
+	ltype 0
+	lweight 2
+	connect lgdelta alpha1
+	ltype 2
+	connect lgdelta alpha3
+	
+	ltype 0
+	connect lgdelta alpha2
+	ltype 2
+	connect lgdelta alpha4
+
+	data P_v.dat
+	read delta 1
+	read P_v 2
+	set lgdelta=lg(delta)
+	ltype 0
+	lweight 4
+	connect lgdelta P_v
+
+	lweight 2 
+
+	ctype default
+	expand 1.8
+	xlabel \Delta
+	ylabel exp(-\tau) P(\Delta) \Delta
+	
+
+	expand 1.5
+	ctype default
+	
+		
+	 

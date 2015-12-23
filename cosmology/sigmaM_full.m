@@ -1,0 +1,35 @@
+%%% this gives sigmaM by integrating the power spectrum
+%%% Note that M is given in M_solar, NOT M_solar h^-1
+
+
+function y=sigmaM_full(M)
+cosmological_parameters
+global r_M_comoving_global
+
+nmass=length(M);
+y=zeros(size(M));
+
+for i=1:nmass
+  
+rho=2.684e11/h*Omega_m;  %%% this has units of M_solar Mpc^-3 h^3
+r_M_comoving_global=(3.*M(i)/4./pi/rho).^0.3333333; %%% this has units of
+                                                   %Mpc h^-1
+
+lower=log(1.e-3);
+upper=log(1.e5);
+
+integral=quadl(@sigmaM_full_func,lower,upper);
+
+y(i)=sqrt(integral./((2.*pi).^3));
+
+end
+
+function y=sigmaM_full_func(lgk)
+global r_M_comoving_global
+
+k=exp(lgk);
+x=r_M_comoving_global.*k;
+window=((3./(x.^3)).*(sin(x)-x.*cos(x))).^2;
+%y=window.*pk(k).*4.*pi.*k.*k.*k;  
+%possible fix doesnt work weird
+y=window.*pk(k).*4.*pi.*k.*k.*k; 

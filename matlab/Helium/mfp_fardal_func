@@ -1,0 +1,14 @@
+%%% this is the input function for for mfp
+
+function y=mfp_fardal_func(lgN)
+global Q_g gam_H_g gam_He_g z_g
+
+N=exp(lgN);
+
+N_HI=N_HI_from_H_HeII(N,z_g,gam_H_g,gam_He_g);
+
+dzdl=1./dproper_from_delta_z(1,z_g);
+
+tau=N.*sigma
+
+y=N.*dzdl.*fN_HeII_fardal(N_HI,gam_H_g,gam_He_g,z_g).*(1-exp(-tau));

@@ -1,0 +1,5 @@
+places to change when change rho_m_comoving:
+
+1. WMAP 5 years
+2. initialize power specturm
+3. sigmaM_full

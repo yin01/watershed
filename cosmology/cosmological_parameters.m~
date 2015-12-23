@@ -1,0 +1,13 @@
+global Omega_m Omega_lambda Omega_b sigma8 h Omega_k  gamma_CDM
+global rho_crit_cgs rho_m_comoving Ao_PS
+global sigma_norm
+
+global splinefit_sigmaM splinefit_dsigmadM
+
+%% initialize physical variables
+global m_p_const k_b_const sigma_T h_P c m_e G_const mu_const sigma_norm echarge
+
+
+%%% initialize other problem specific variables
+%%%global entropy_eV_to_cgs 
+global gam_gas

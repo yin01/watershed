@@ -1,0 +1,7 @@
+%%%%% this computes N_HI from N_HeII
+
+function y=N_HI_from_N_HeII(N_HeII,z,Gamma_HI,Gamma_HeII)
+global gam_H_g3 gam_He_g3
+
+y=exp(fzero(@NHI_solve_func,log(1.e12),log(1.e22));
+

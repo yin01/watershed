@@ -1,0 +1,11 @@
+function r200=r200_func(m200) % input m200 in M_solar 
+             % returns r200 in kpc 
+
+cosmological_parameters
+  M_cgs=m200*2.e33;
+ 
+  rho_crit=277.3; % in M_solar kpc^-3
+  rho_crit_cgs=rho_crit*2.e33/((3.e21)^3);
+  
+  r200=(3.*M_cgs./(4.*pi.*rho_crit_cgs.*200)).^0.33333333333;
+  r200=r200./3.e21; % convert to kpc 

@@ -1,0 +1,6 @@
+function y=sigma_M_fit(M)
+cosmological_parameters
+
+M_solar=M.*h;
+
+y=sigma_M(M_solar);

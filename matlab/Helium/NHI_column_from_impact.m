@@ -1,0 +1,48 @@
+
+%%% this gives the column density NHI (in cm^2) as a function of the impact
+%parameter b (in kpc)
+% r is in kpc, n_HI is in cm^-3
+
+function y=NHI_column_from_impact(b,r,n_HI)
+global b_g r_g n_HI_g
+
+% initialize globals
+
+r_g=r;
+n_HI_g=n_HI;
+  
+xmin=log(1.e-3);
+
+r_vir=max(r);
+  
+  nb=length(b);
+  y=zeros(size(b));
+  
+  for i=1:nb
+    b_g=b(i);
+    xmax=log(sqrt(r_vir.^2 - b_g.^2));
+    y(i)=quadl(@NHI_func,xmin,xmax);
+  end
+
+y=2.*y.*3.e21; %%% convert to cm^-2, also take care of symmetry
+  
+  
+function y=NHI_func(lgx)
+global b_g r_g n_HI_g
+
+x=exp(lgx);
+
+r=sqrt(b_g.^2+x.^2);
+
+n_HI=exp(spline(log(r_g),log(n_HI_g),log(r)));
+
+y=n_HI.*x;
+
+
+ 
+  
+  
+  
+  
+  
+  

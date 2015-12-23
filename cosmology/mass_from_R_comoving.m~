@@ -1,0 +1,8 @@
+%%% This gives the mass in M_solar
+%%% From the radius in R (Mpc)
+
+function y=mass_from_R_comoving(R)
+cosmological_parameters
+
+rho=2.684e11*h*h;  %%% this is rho in straight units of M_solar Mpc^-3
+y=4./3.*pi*rho.*(R.^3);  

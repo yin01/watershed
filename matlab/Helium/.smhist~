@@ -1,0 +1,29 @@
+macro read plot_filling_factor_soft.sm
+go
+macro read plot_filling_factor_soft.sm
+go
+macro read plot_filling_factor_soft.sm
+go
+macro read plot_filling_factor_soft.sm
+go
+erase
+macro read plot_filling_factor_soft.sm
+go
+help ltype
+macro read plot_filling_factor_soft.sm
+erase
+macro read plot_filling_factor_soft.sm
+go
+erase
+macro read plot_filling_factor_soft.sm
+go
+help ltype
+macro read plot_filling_factor_soft.sm
+go
+erase
+macro read plot_filling_factor_soft.sm
+go
+hardcopy
+quit
+macro read plot_filling_factor_soft.sm
+quit

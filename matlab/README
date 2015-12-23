@@ -1,0 +1,8 @@
+Here is the key for all the programs
+
+************Main programs****************************
+test_P_delta: some test programs for the initial programming of
+	      P(delta), to check against MHR00 results
+test_change_emissivity: program making plots of how mean free path
+			and ionizing background change as a function
+			of emissivity at z=6

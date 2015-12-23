@@ -1,0 +1,8 @@
+%%% This gives the Helium fN from the fardal function
+%% input is N_HI, z
+
+function y=fN_HeII_fardal(N_HI,Gamma_HI,Gamma_HeII,z)
+
+N_HeII=eta_fardal(N_HI,Gamma_HI,Gamma_HeII).*N_HI;
+
+tau=N_HeII.*sigma_HeI(

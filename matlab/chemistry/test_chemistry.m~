@@ -1,0 +1,30 @@
+
+
+%%% this little routine tests the chemistry
+
+alpha=1.5;
+
+z=3.;
+delta=10.;
+gamma_HI=1.e-12;
+E_ion_HI=13.6.*1.6e-12./(alpha+2);
+
+y_init=equilibrium(z,delta,gamma_HI,E_ion_HI);
+
+%%y_init=[log(1.e-3) log(1.e4)];
+
+y_test=[log(1.e-5) 1.];
+
+[time_t y]=ode15s(@chem_func,[0. 10.],y_test);
+
+
+time_t=time_t.*1.e9;
+x_HI=exp(y(:,1));
+T=y(:,2).*1.e4;
+
+figure(1)
+semilogx(time_t,log10(x_HI))
+
+figure(2)
+semilogx(time_t,T)
+

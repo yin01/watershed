@@ -1,0 +1,81 @@
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+macro read plot_flux_integrand.sm
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+relocate -0.501189 1.01325
+erase
+macro read plot_flux_integrand.sm
+go
+relocate -0.212142 1.00255
+erase
+go
+erase
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_flux_integrand.sm
+go
+erase
+macro read plot_flux_integrand.sm
+go
+hardcopy
+quit
+macro read plot_scaling_relations.sm
+go
+hardcopy
+quit

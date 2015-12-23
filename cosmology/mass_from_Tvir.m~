@@ -1,0 +1,12 @@
+%% This gives the halo mass from the virial temperature
+%% mass is in Tvir
+
+
+function y=mass_from_Tvir(T,z) 
+  
+zfactor=((1+z)./10).^(-1.5);
+Tfactor=(T./1.e4).^(1.5);
+
+%%%y=8.56e7.*zfactor.*Tfactor;
+
+y=5.e7.*zfactor.*Tfactor;

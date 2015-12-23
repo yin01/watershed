@@ -1,0 +1,4 @@
+function y=d_A(z) %% in Mpc
+cosmological_parameters
+
+  y=d_L(z)/((1+z).^2);

@@ -1,0 +1,43 @@
+go	data delta_crit_alpha_isothermal.dat
+	read z 1
+	read d_alpha_med 2
+	read d_alpha_dn 3
+	read d_alpha_up 4
+	
+	data delta_crit_beta_isothermal.dat
+	read z 1
+	read d_beta_med 2
+	read d_beta_dn 3
+	read d_beta_up 4
+
+	lweight 2
+	limits 3 6.3 0.1 0.9
+	expand 1.7
+	box
+	xlabel z
+	ylabel \Delta
+	ctype default
+	connect z d_alpha_med
+	ltype 2
+	connect z d_alpha_dn
+	connect z d_alpha_up
+	ctype blue
+	ltype 0
+	connect z d_beta_med
+	ltype 1
+	connect z d_beta_dn
+	connect z d_beta_up
+
+	ltype 0
+	ctype default
+
+	relocate 5.8 0.37
+	ctype blue
+	putlabel 5 Ly\beta
+	ctype default
+
+	relocate 3.5 0.3
+	putlabel 5 Ly\alpha
+
+	
+	
