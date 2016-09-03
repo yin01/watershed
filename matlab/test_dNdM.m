@@ -43,7 +43,7 @@ mass= mass_from_R_comoving(R);
 
 
 z1=12;
-f1=V_comoving_from_M(mass).*mass.*dNdM_FHZ(mass,z1);
+f1=V_comoving_from_M(mass).*mass.*dNdM_FHZ(mass,z1).*3./Q_filling_factor(z1);
 
 
 z2=14.;

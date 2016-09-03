@@ -9,4 +9,4 @@ mass=mass_from_Tvir(1.e4,z);
 
 sigMmin=sigmaM_spline(mass);
 
-y=erfc(delta_crit(z)./sqrt(2)./sigMmin);
+y=erfc(delta_crit(z)./(sqrt(2).*sigMmin));
