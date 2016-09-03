@@ -1,4 +1,5 @@
 function y=delta_crit(z)
+%{
 cosmological_parameters
   
   om=Omega_z(z);
@@ -12,4 +13,7 @@ cosmological_parameters
   y=0.15.*((12*pi)^0.6667).*(om.^p);
   
 %%%  y=1.686.*(Omega_z(z).^p);
-  y=y./growth_factor(z);
+y=y./growth_factor(z);
+%}
+
+y=1.686./growth_factor(z);

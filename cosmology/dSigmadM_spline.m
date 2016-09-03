@@ -1,4 +1,5 @@
 %%%  Spline fit to derivative
+%% input M in Msolar
 
 function y=dSigmadM_spline(M)
 cosmological_parameters

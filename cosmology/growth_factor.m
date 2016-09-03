@@ -1,25 +1,21 @@
-function y=growth_factor(z)
-cosmological_parameters
+%{
+References
+    ----------
+    .. [1] Lukic et. al., ApJ, 2007,
+    http://adsabs.harvard.edu/abs/2007ApJ...671.1160L   {equation (7)}
+%}
+function y = growth_factor(z)
+dummy = zeros(1,length(z));
 
-      if (abs(Omega_m-1.)>=1.e-2) 
-         y=growth_supp(Omega_z(z))./growth_supp(Omega_m) ...
-          ./(1.+z);
-      else
-         y=1./(1.+z);
-      end
+for i=1:length(z)
+    a = 1./(1+z(i));
+    cosmological_parameters
 
+    hh0 = @(x) sqrt(Omega_m./x.^3 + (1 - Omega_m));
 
-function y=growth_supp(Omega)
-cosmological_parameters
-  
-      if (abs(Omega_m-1.)<=1.e-2) %% SCDM
-         growth_supp=1.;
-      end
+    logintegrand = @(lna) exp(lna) ./ ( exp(lna) .* hh0(exp(lna))).^3;
 
-      if (abs(Omega_k)<=1.e-2) %% flat lambda CDM
-         denom=1./70.+209./140.*Omega-(Omega.^2)/140.+Omega.^(4./7.);
-      else
-         denom=1.*0.5.*Omega+Omega.^(4./7.);
-      end
-
-      y=2.5.*Omega./denom;
+    norm = (5.0/2.0 .* Omega_m) .* hh0(1) .* integral(logintegrand, log(0.0001), log(1)); %normalize to 1 at z=0
+    dummy(i) = (5.0/2.0 .* Omega_m) .* hh0(a) .* integral(logintegrand, log(0.0001), log(a)) / norm;
+end
+y=dummy;

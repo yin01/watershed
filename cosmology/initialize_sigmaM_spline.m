@@ -7,7 +7,6 @@ cosmological_parameters
 mass=logspace(5,20);
 lgMh=log(mass);
 lgsigmaM=log(sigmaM_full(mass));
-%%%lgsigmaM=log(sigmaM_old_fortran(mass));
 
 splinefit_sigmaM=spline(lgMh,lgsigmaM);
 splinefit_dsigmadM=fnder(splinefit_sigmaM);

@@ -6,7 +6,7 @@ y=zeros(size(z));
 
 for i=1:nz
 
-  y(i)=quadl(@d_M_integrand,0,z(i));
+  y(i)=integral(@d_M_integrand,0,z(i));
 end
 
   y=3000.*y./h;

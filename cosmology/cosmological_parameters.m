@@ -1,4 +1,4 @@
-global Omega_m Omega_lambda Omega_b sigma8 h Omega_k  gamma_CDM
+global Omega_m Omega_lambda Omega_b sigma8 h Omega_k  gamma_CDM n_pk Tcmb
 global rho_crit_cgs rho_m_comoving Ao_PS
 global sigma_norm
 
