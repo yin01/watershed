@@ -1,4 +1,4 @@
-function [r,y] = analytic_convo_excur(z, lower_r, upper_r)
+function [r,y] = analytic_convo_excur(z14, upper_R)
 %ANALYTIC_CONV_excur convolve the window function of mfp at 
 %redshift z with the excursion set bubble distribution and return a 
 %NON-normalized probability density dp/dr. This one runs slower than all
@@ -17,21 +17,25 @@ initialize_cosmology;
 initialize_sigmaM_spline;
 initialize_FHZ;
 
+m_min=mass_from_Tvir(1.e4, z14);
+lower_R = R_comoving_from_M(zeta_global*m_min);    %1e4 virial temperature
+
 points = 1000;    
-upper_R = upper_r;
-r = linspace(lower_r, upper_r, points);
+R = linspace(lower_R, upper_R, points);
 
 y = zeros(1,points);
 
-masses = mass_from_R_comoving(r);
+masses = mass_from_R_comoving(R);
 %10.^9 factor to make some entries non zeros since they are small
 %Essentially, 10.^9 is the volume of the space
 enlarge_factor = 10.^9;
-dNdR = enlarge_factor*dNdM_FHZ(masses,z14) .* r.^2;
+%dNdR = enlarge_factor*dNdM_FHZ(masses,z14) .* r.^2;
 
+dNdR = dNdR_FHZ_eul(masses,z14);
+r = linspace(0.1,upper_R*2,points);
 %loop over given radius and add up the contribution
 for count = 1:points
-    current_R = r(count)
+    current_R = R(count)
 
     analytic_exp = zeros(1,points);          
     for i=1:points
@@ -39,7 +43,7 @@ for count = 1:points
     end
     %now fix the problems of NaN
     analytic_exp(analytic_exp<0) = 0;
-    analytic_exp = fixgaps(analytic_exp);
+    %analytic_exp = fixgaps(analytic_exp);
     analytic_exp(isnan(analytic_exp)) = 0;
     
     %now integrate

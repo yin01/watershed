@@ -11,7 +11,7 @@ initialize_cosmology;
 initialize_sigmaM_spline;
 initialize_FHZ;
 
-z14 = 11.4; %z14 = 12.5, 11.4, 10.35 for REAL COSMOLOGY z = 12, 11, 10
+z14 = 12; %z14 = 12.5, 11.4, 10.35 for REAL COSMOLOGY z = 12, 11, 10
 
 
 figure(1),hold on;
